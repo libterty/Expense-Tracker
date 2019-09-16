@@ -6,12 +6,10 @@
         請選擇排序方式
       </button>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="/search?keyword={{keyword}}&sortKey=rating&sortOrder=desc">餐廳評分：高 > 低</a>
-        <a class="dropdown-item" href="/search?keyword={{keyword}}&sortKey=rating&sortOrder=asc">餐廳評分：低 > 高</a>
-        <a class="dropdown-item" href="/search?keyword={{keyword}}&sortKey=name&sortOrder=asc">店名：Ａ > Z</a>
-        <a class="dropdown-item" href="/search?keyword={{keyword}}&sortKey=name&sortOrder=desc">店名：Ｚ > Ａ</a>
-        <a class="dropdown-item" href="/search?keyword={{keyword}}&sortKey=category&sortOrder=asc">類別</a>
-        <a class="dropdown-item" href="/search?keyword={{keyword}}&sortKey=location&sortOrder=desc">地區</a>
+        <a class="dropdown-item" value="home" href="/search?keyword=home">home</a>
+        <a class="dropdown-item" value="traffic" href="/search?keyword=traffic">traffic</a>
+        <a class="dropdown-item" value="entertainment" href="/search?keyword=entertainment">entertainment</a>
+        <a class="dropdown-item" value="others" href="/search?keyword=others">others</a>
       </div>
     </div>
   </div>

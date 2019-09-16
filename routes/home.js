@@ -10,4 +10,15 @@ router.get('/', authenticated, (req, res) => {
   })
 })
 
+router.get('/search', authenticated, (req, res) => {
+  trackerList.find().exec((err, trackerLists) => {
+    if (err) console.log(err)
+    console.log(req)
+    const tracker = trackerLists.filter(item =>
+      item.category.toLowerCase().includes(req.query.keyword.toLowerCase())
+    )
+    return res.render('index', { trackers: tracker })
+  })
+})
+
 module.exports = router
