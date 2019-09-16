@@ -37,8 +37,8 @@ describe('GET /trackers', () => {
         password: '12345678'
       })
       .then(res1 => {
-        agent.get('/trackers/5d7f1814432781cca3cc3771').then(res2 => {
-          res2.should.have.status(200)
+        agent.get('/trackers/5d7f1814432781cca3cc3771/edit').then(res2 => {
+          expect(res2.status).to.be.eql(200)
           done()
         })
       })
@@ -55,7 +55,7 @@ describe('GET /trackers', () => {
         password: '12345678'
       })
       .then(res1 => {
-        agent.get('/trackers/1231231231231231231').then(res2 => {
+        agent.get('/trackers/1231231231231231231/edit').then(res2 => {
           expect(res2.status).to.be.eql(400)
           done()
         })
@@ -74,14 +74,14 @@ describe('GET /trackers', () => {
       })
       .then(res1 => {
         agent
-          .put('/trackers/5d7732fc11207c1fe8bc4a97/edit')
+          .put('/trackers/5d7f1814432781cca3cc3771/edit')
           .type('form')
           .send({
             _method: 'put',
-            name: '修改測試支出1',
-            category: '修改支出類別',
-            date: '修改測試時間',
-            amount: '修改支出金額'
+            name: '中餐',
+            category: 'foods',
+            date: '2019-09-16T05:05:24.064Z',
+            amount: 2320
           })
           .then(res2 => {
             expect(res2.status).to.be.eql(200)
@@ -97,7 +97,7 @@ describe('GET /trackers', () => {
       .type('form')
       .send({
         _method: 'post',
-        email: 'user1@example.com',
+        email: 'lib1@example.com',
         password: '12345678'
       })
       .then(res1 => {
@@ -107,9 +107,9 @@ describe('GET /trackers', () => {
           .send({
             _method: 'post',
             name: '測試支出2',
-            category: '支出類別',
-            date: '測試時間',
-            amount: '支出金額'
+            category: 'others',
+            date: '2019-09-13T05:05:24.064Z',
+            amount: 2100
           })
           .then(res2 => {
             expect(res2.status).to.be.eql(200)
@@ -126,12 +126,12 @@ describe('GET /trackers', () => {
       .type('form')
       .send({
         _method: 'post',
-        email: 'user1@example.com',
+        email: 'lib1@example.com',
         password: '12345678'
       })
       .then(res1 => {
         agent
-          .delete('/trackers/5d7e1d41f38328af0b8f3bde/delete?_method=DELETE')
+          .delete('/trackers/5d7f3577fb1379d6d5571e66/delete?_method=DELETE')
           .then(res2 => {
             expect(res2.status).to.be.eql(200)
             done()
