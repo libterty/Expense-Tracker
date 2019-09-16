@@ -27,38 +27,25 @@
 
     <div class="col-md-10 col-12 mx-auto">
 
-      <div class="card-columns">
+      <div class="list-group">
         {{#each trackers}}
 
-        <div class="card mb-3">
-          <div class="hovereffect">
+        <div class="group" style="display: flex; flex-flow: row;">
+          <a href="/trackers/{{this._id}}" class="list-group-item list-group-item-action flex-column align-items-start">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">{{this.name}}</h5>
+              <small>{{this.amount}} &dollar;</small>
+            </div>
+            <p class="mb-1">{{this.category}}</p>
+            <small>{{this.date}}</small>
+          </a>
+
+          <div class="hovereffect d-flex w-100 justify-content-center flex-row" style="align-items: center;">
             <div class="overlay">
-              <a class="info" href="/trackers/{{{this._id}}}/edit">Edit</a>
-              <button type="button" class="btn btn-danger" data-toggle="modal" data-target="
-                      #trigger-deleteItem-{{this._id}}" style="margin-bottom: 18.5%">
-                Delete
-              </button>
+              <a class="info" href="/trackers/{{{this._id}}}/edit" style="padding-right: 0.5rem;">Edit</a>
+              <a class="info" data-toggle="modal" data-target="#trigger-deleteItem-{{this._id}}">Delete</a>
             </div>
           </div>
-
-          <a href="/trackers/{{this._id}}" class="text-secondary">
-            <div class="card-body p-3" style="display: inline;">
-              <h6 class="card-title mb-1 ml-3">{{this.name}}</h6>
-              <div class="restaurant-category mb-1 ml-3">
-                <i class="fas fa-utensils pr-2"></i> {{this.category}}
-              </div>
-
-              <span class="badge badge-pill badge-danger font-weight-normal ml-3 mb-2">
-                {{this.date}}
-                <i class="fas fa-star fa-xs"></i>
-              </span>
-
-              <span class="badge badge-pill badge-danger font-weight-normal ml-3 mb-2">
-                {{this.amount}} &dollar;
-                <i class="fas fa-star fa-xs"></i>
-              </span>
-            </div>
-          </a>
         </div>
 
         <!-- Delete attention -->
