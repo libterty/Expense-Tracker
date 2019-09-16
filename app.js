@@ -11,7 +11,7 @@ const app = express()
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config()
 }
-const port = process.env.port
+const port = process.env.PORT || 3001
 const { ECONNRESET, logErrors, notFound } = require('./config/middlewares')
 
 require('./config/passport')(passport)
@@ -41,7 +41,7 @@ H.registerHelpers(Handlebars)
 
 //connect to database
 const mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost/tracker', {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/tracker', {
   useNewUrlParser: true
 })
 mongoose.set('useCreateIndex', true)
