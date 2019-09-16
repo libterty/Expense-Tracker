@@ -1,0 +1,87 @@
+{
+    "results": [{
+            "id": 1,
+            "name": "房租",
+            "category": "home",
+            "amount": 9000
+        },
+        {
+            "id": 2,
+            "name": "通勤",
+            "category": "traffic",
+            "amount": 3500
+        },
+        {
+            "id": 3,
+            "name": "出遊",
+            "category": "entertainment",
+            "amount": 2300
+        },
+        {
+            "id": 4,
+            "name": "早餐",
+            "category": "foods",
+            "amount": 1400
+        },
+        {
+            "id": 5,
+            "name": "卡費",
+            "category": "others",
+            "amount": 3200
+        },
+        {
+            "id": 6,
+            "name": "避險",
+            "category": "others",
+            "amount": 2500
+        },
+        {
+            "id": 7,
+            "name": "中餐",
+            "category": "foods",
+            "amount": 2300
+        },
+        {
+            "id": 8,
+            "name": "晚餐",
+            "category": "foods",
+            "amount": 3250
+        },
+        {
+            "id": 9,
+            "name": "電費",
+            "category": "home",
+            "amount": 400
+        },
+        {
+            "id": 10,
+            "name": "水費",
+            "category": "home",
+            "amount": 230
+        },
+        {
+            "id": 11,
+            "name": "保險",
+            "category": "others",
+            "amount": 3200
+        },
+        {
+            "id": 12,
+            "name": "健身",
+            "category": "entertainment",
+            "amount": 1200
+        },
+        {
+            "id": 13,
+            "name": "存款",
+            "category": "others",
+            "amount": 10000
+        },
+        {
+            "id": 14,
+            "name": "油錢",
+            "category": "traffic",
+            "amount": 6500
+        }
+    ]
+}
