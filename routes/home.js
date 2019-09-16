@@ -6,18 +6,25 @@ const { authenticated } = require('../config/auth')
 router.get('/', authenticated, (req, res) => {
   trackerList.find({ userId: req.user._id }, (err, trackerLists) => {
     if (err) return res.status(400).send('Bad Request')
-    return res.render('index', { trackers: trackerLists })
+    let summary = null
+    for (let i = 0; i < trackerLists.length; i++) {
+      summary += +trackerLists[i].amount
+    }
+    return res.render('index', { trackers: trackerLists, summary: summary })
   })
 })
 
 router.get('/search', authenticated, (req, res) => {
   trackerList.find().exec((err, trackerLists) => {
     if (err) console.log(err)
-    console.log(req)
     const tracker = trackerLists.filter(item =>
       item.category.toLowerCase().includes(req.query.keyword.toLowerCase())
     )
-    return res.render('index', { trackers: tracker })
+    let summary = null
+    for (let i = 0; i < tracker.length; i++) {
+      summary += +tracker[i].amount
+    }
+    return res.render('index', { trackers: tracker, summary: summary })
   })
 })
 
