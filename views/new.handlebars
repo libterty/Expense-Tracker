@@ -20,7 +20,14 @@
                 支出類別 *
               </label>
               <div class="col-md-8">
-                <input type="text" name="category" class="form-control" id="category" placeholder="home、traffic、entertainment、foods、others" required>
+                <select type="text" name="category" class="custom-select form-control" id="category" placeholder="home、traffic、entertainment、foods、others" required>
+                  <option name="category" selected>Choose...</option>
+                  <option name="category" value="home">home</option>
+                  <option name="category" value="traffic">traffic</option>
+                  <option name="category" value="entertainment">entertainment</option>
+                  <option name="category" value="foods">foods</option>
+                  <option name="category" value="others">others</option>
+                </select>
               </div>
             </div>
             <div class="form-group form-row">
@@ -28,7 +35,7 @@
                 支出日期 *
               </label>
               <div class="col-md-8">
-                <input type="text" name="date" class="form-control" id="date" placeholder="支出日期" cols="48" rows="2">
+                <input type="date" name="date" class="form-control" id="date" data-provide="datepicker" placeholder="支出日期">
               </div>
             </div>
             <div class="form-group form-row">

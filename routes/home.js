@@ -16,7 +16,7 @@ router.get('/', authenticated, (req, res) => {
 
 router.get('/search', authenticated, (req, res) => {
   trackerList.find().exec((err, trackerLists) => {
-    if (err) console.log(err)
+    if (err) res.status(400).send('Bad Request')
     const tracker = trackerLists.filter(item =>
       item.category.toLowerCase().includes(req.query.keyword.toLowerCase())
     )

@@ -21,16 +21,6 @@ router.post('/new', authenticated, (req, res) => {
   })
 })
 
-// router.get('/:id', authenticated, (req, res) => {
-//   TrackerList.findOne(
-//     { _id: req.params.id, userId: req.user._id },
-//     (err, tracker) => {
-//       if (err) return res.status(400).send('錯誤要求')
-//       return res.render('show', { trackers: tracker })
-//     }
-//   )
-// })
-
 router.get('/:id/edit', authenticated, (req, res) => {
   TrackerList.findOne(
     { _id: req.params.id, userId: req.user._id },

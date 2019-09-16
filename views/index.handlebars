@@ -6,6 +6,7 @@
         請選擇排序方式
       </button>
       <div class="dropdown-menu">
+        <a class="dropdown-item" value="" href="/" style="height: 32px;">             </a>
         <a class="dropdown-item" value="home" href="/search?keyword=home">home</a>
         <a class="dropdown-item" value="traffic" href="/search?keyword=traffic">traffic</a>
         <a class="dropdown-item" value="foods" href="/search?keyword=foods">foods</a>
@@ -26,7 +27,12 @@
 
     <div class="col-md-10 col-12 mx-auto">
       {{#if summary}}
-      <div class="summary">{{summary}}</div>
+      <div class="list-group">
+        <div class="d-flex w-100 justify-content-center">
+          <h2 class="mb-1">總金額：</h2>
+          <p style="font-size: 5rem; padding-left: 1.0rem; color: #FF8C00;">{{summary}}</p>
+        </div>
+        </div>
       {{/if}}
       <div class="list-group">
         {{#each trackers}}
@@ -55,7 +61,7 @@
             <small>{{this.date}}</small>
           </a>
 
-          <div class="hovereffect d-flex w-100 justify-content-center flex-row" style="align-items: center;">
+          <div class="d-flex w-100 justify-content-center flex-row" style="align-items: center;">
             <div class="overlay">
               <a class="info" href="/trackers/{{{this._id}}}/edit" style="padding-right: 0.5rem;">Edit</a>
               <a class="info" data-toggle="modal" data-target="#trigger-deleteItem-{{this._id}}">Delete</a>
