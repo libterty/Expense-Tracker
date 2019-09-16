@@ -5,9 +5,11 @@ const methodOverride = require('method-override')
 const exphbs = require('express-handlebars')
 const flash = require('connect-flash')
 const passport = require('passport')
+const Handlebars = require('handlebars')
+const H = require('just-handlebars-helpers')
 const app = express()
 if (process.env.NODE_ENV !== 'production') {
-  require('dotenv').config()
+    require('dotenv').config()
 }
 const port = process.env.port
 const { ECONNRESET, logErrors, notFound } = require('./config/middlewares')
@@ -16,39 +18,40 @@ require('./config/passport')(passport)
 
 app.use(express.static('public'))
 app.use(
-  session({
-    secret: 'your secret key',
-    resave: false,
-    saveUninitialized: true
-  })
+    session({
+        secret: 'your secret key',
+        resave: false,
+        saveUninitialized: true
+    })
 )
 app.use(passport.initialize())
 app.use(passport.session())
 app.use(flash())
 app.use((req, res, next) => {
-  res.locals.user = req.user
-  res.locals.isAuthenticated = req.isAuthenticated()
-  res.locals.success_msg = req.flash('success_msg')
-  res.locals.warning_msg = req.flash('warning_msg')
-  next()
+    res.locals.user = req.user
+    res.locals.isAuthenticated = req.isAuthenticated()
+    res.locals.success_msg = req.flash('success_msg')
+    res.locals.warning_msg = req.flash('warning_msg')
+    next()
 })
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.static('public'))
 app.use(methodOverride('_method'))
+H.registerHelpers(Handlebars);
 
 //connect to database
 const mongoose = require('mongoose')
 mongoose.connect('mongodb://localhost/tracker', {
-  useNewUrlParser: true
+    useNewUrlParser: true
 })
 mongoose.set('useCreateIndex', true)
 const db = mongoose.connection
 
 db.on('error', () => {
-  console.log('mongodb error')
+    console.log('mongodb error')
 })
 db.once('open', () => {
-  console.log('mongodb connected')
+    console.log('mongodb connected')
 })
 
 //template engine
@@ -66,7 +69,7 @@ app.use(notFound)
 app.use(logErrors)
 
 app.listen(port, () => {
-  console.log(`Express is listening on http://localhost:${port}`)
+    console.log(`Express is listening on http://localhost:${port}`)
 })
 
 module.exports = app

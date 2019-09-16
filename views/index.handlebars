@@ -8,6 +8,7 @@
       <div class="dropdown-menu">
         <a class="dropdown-item" value="home" href="/search?keyword=home">home</a>
         <a class="dropdown-item" value="traffic" href="/search?keyword=traffic">traffic</a>
+        <a class="dropdown-item" value="foods" href="/search?keyword=foods">foods</a>
         <a class="dropdown-item" value="entertainment" href="/search?keyword=entertainment">entertainment</a>
         <a class="dropdown-item" value="others" href="/search?keyword=others">others</a>
       </div>
@@ -30,6 +31,21 @@
 
         <div class="group" style="display: flex; flex-flow: row;">
           <a href="/trackers/{{this._id}}" class="list-group-item list-group-item-action flex-column align-items-start">
+            {{#if (eq this.category 'home')}}
+            <i class="fas fa-home"></i>
+            {{/if}}
+            {{#if (eq this.category 'traffic')}}
+            <i class="fas fa-shuttle-van"></i>
+            {{/if}}
+            {{#if (eq this.category 'entertainment')}}
+            <i class="fas fa-grin-beam"></i>
+            {{/if}}
+            {{#if (eq this.category 'foods')}}
+            <i class="fas fa-utensils"></i>
+            {{/if}}
+            {{#if (eq this.category 'others')}}
+            <i class="fas fa-pen"></i>
+            {{/if}}
             <div class="d-flex w-100 justify-content-between">
               <h5 class="mb-1">{{this.name}}</h5>
               <small>{{this.amount}} &dollar;</small>
