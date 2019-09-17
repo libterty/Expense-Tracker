@@ -13,6 +13,7 @@ router.post('/new', authenticated, (req, res) => {
     name: req.body.name,
     category: req.body.category,
     date: req.body.date,
+    merchant: req.body.merchant,
     amount: req.body.amount
   })
   tracker.save(err => {
@@ -39,6 +40,7 @@ router.put('/:id/edit', authenticated, (req, res) => {
       tracker.name = req.body.name
       tracker.category = req.body.category
       tracker.date = req.body.date
+      tracker.merchant = req.body.merchant
       tracker.amount = req.body.amount
 
       tracker.save(err => {

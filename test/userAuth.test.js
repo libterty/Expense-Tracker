@@ -73,8 +73,8 @@ describe('POST /users/register', () => {
         .type('form')
         .send({
           _method: 'post',
-          name: 'lib1',
-          email: 'lib1@example.com',
+          name: 'lib2',
+          email: 'lib2@example.com',
           password: '12345678',
           password2: '12345678'
         })

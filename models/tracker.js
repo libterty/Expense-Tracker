@@ -15,6 +15,10 @@ const trackerSchema = new Schema({
     default: Date.now(),
     required: true
   },
+  merchant: {
+    type: String,
+    required: true
+  },
   amount: {
     type: Number,
     required: true

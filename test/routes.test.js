@@ -74,13 +74,14 @@ describe('GET /trackers', () => {
       })
       .then(res1 => {
         agent
-          .put('/trackers/5d7f1814432781cca3cc3771/edit')
+          .put('/trackers/5d805b6223987cfeb61147ae/edit')
           .type('form')
           .send({
             _method: 'put',
             name: '中餐',
             category: 'foods',
             date: '2019-09-16T05:05:24.064Z',
+            merchant: '中市飲茶',
             amount: 2320
           })
           .then(res2 => {
@@ -107,8 +108,9 @@ describe('GET /trackers', () => {
           .send({
             _method: 'post',
             name: '測試支出2',
-            category: 'others',
+            category: 'foods',
             date: '2019-09-13T05:05:24.064Z',
+            merchant: '中市飲茶',
             amount: 2100
           })
           .then(res2 => {
@@ -131,7 +133,7 @@ describe('GET /trackers', () => {
       })
       .then(res1 => {
         agent
-          .delete('/trackers/5d7f3577fb1379d6d5571e66/delete?_method=DELETE')
+          .delete('/trackers/5d80609f15e3030137aac748/delete?_method=DELETE')
           .then(res2 => {
             expect(res2.status).to.be.eql(200)
             done()

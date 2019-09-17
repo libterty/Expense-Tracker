@@ -37,7 +37,7 @@
       <div class="list-group">
         {{#each trackers}}
         <div class="group" style="display: flex; flex-flow: row;">
-          <a href="/trackers/{{this._id}}" class="list-group-item list-group-item-action flex-column align-items-start">
+          <a href="/trackers/{{this._id}}/edit" class="list-group-item list-group-item-action flex-column align-items-start">
             {{#if (eq this.category 'home')}}
             <i class="fas fa-home"></i>
             {{/if}}
@@ -55,6 +55,7 @@
             {{/if}}
             <div class="d-flex w-100 justify-content-between">
               <h5 class="mb-1">{{this.name}}</h5>
+              <small> - {{this.merchant}}</small>
               <small>{{this.amount}} &dollar;</small>
             </div>
             <p class="mb-1">{{this.category}}</p>

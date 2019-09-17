@@ -39,6 +39,7 @@ db.once('open', () => {
                 name: trackers[j].name,
                 category: trackers[j].category,
                 date: trackers[j].date,
+                merchant: trackers[j].merchant,
                 amount: trackers[j].amount,
                 userId: users._id
               })
