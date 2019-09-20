@@ -82,8 +82,10 @@ router.post('/register', (req, res) => {
 router.get('/logout', (req, res) => {
   req.logout()
   req.flash('success_msg', '你已經成功登出')
-  res.status(200).send('你已經成功登出')
-  res.redirect('/users/login')
+  res
+    .status(200)
+    .redirect('/users/login')
+    .send('你已經成功登出')
 })
 
 module.exports = router
