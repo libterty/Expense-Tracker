@@ -37,7 +37,7 @@ describe('GET /trackers', () => {
         password: '12345678'
       })
       .then(res1 => {
-        agent.get('/trackers/5d7f1814432781cca3cc3771/edit').then(res2 => {
+        agent.get('/trackers/5d846fb5d2b4c83f26031db7/edit').then(res2 => {
           expect(res2.status).to.be.eql(200)
           done()
         })
@@ -74,7 +74,7 @@ describe('GET /trackers', () => {
       })
       .then(res1 => {
         agent
-          .put('/trackers/5d805b6223987cfeb61147ae/edit')
+          .put('/trackers/5d846fb5d2b4c83f26031db7/edit')
           .type('form')
           .send({
             _method: 'put',
@@ -109,7 +109,7 @@ describe('GET /trackers', () => {
             _method: 'post',
             name: '測試支出2',
             category: 'foods',
-            date: '2019-09-13T05:05:24.064Z',
+            date: '2019/02/20',
             merchant: '中市飲茶',
             amount: 2100
           })
@@ -133,7 +133,7 @@ describe('GET /trackers', () => {
       })
       .then(res1 => {
         agent
-          .delete('/trackers/5d80609f15e3030137aac748/delete?_method=DELETE')
+          .delete('/trackers/5d848a7e7aa2224827d04419/delete?_method=DELETE')
           .then(res2 => {
             expect(res2.status).to.be.eql(200)
             done()

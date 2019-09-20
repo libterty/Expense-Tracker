@@ -39,9 +39,9 @@ describe('GET /', () => {
       .get('/users/logout')
       .end((err, res) => {
         should.not.exist(err)
-        res.redirects.length.should.eql(0)
+        console.log(res)
         res.status.should.eql(200)
-        res.text.should.be.eql('你已經成功登出')
+        expect(res).to.redirectTo('http://localhost:3001/users/login')
         done()
       })
   })
