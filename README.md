@@ -34,7 +34,7 @@ npm run start
 
 To unit test the project
 ```
-npm i chai chai-http mocha nodemon q superagent supertest --save-dev
+npm i chai chai-http mocha nodemon q superagent supertest nyc --save-dev
 ```
 
 To lint under eslint standard
@@ -49,17 +49,13 @@ Expect error if you don't, generating _id is considering not equivalent
 ```
 npm run dev
 
-npm run mocha
+npm run test
 ```
 
 ### Running the linting
 ```
 npm run lint
 ```
-
-## Next Update
-- Adding CI/CD using Circle CI
-- Adding test report using NYC
 
 ## Auhtor
 [11](https://github.com/libterty)
