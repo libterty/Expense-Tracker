@@ -22,7 +22,6 @@
               </label>
               <div class="col-md-8">
                 <select type="text" name="category" class="custom-select form-control" id="category" placeholder="home、traffic、entertainment、foods、others" value="{{{trackers.category}}}" required>
-                  <option name="category" selected>Choose...</option>
                   <option name="category" value="home">home</option>
                   <option name="category" value="traffic">traffic</option>
                   <option name="category" value="entertainment">entertainment</option>
@@ -36,7 +35,7 @@
                 支出日期 *
               </label>
               <div class="col-md-8">
-                <input type="text" name="date" class="form-control" id="date" data-provide="datepicker"
+                <input type="text" name="date" class="form-control" id="date" data-provide="datepicker" data-date-format="yyyy/mm/dd"
                   placeholder="支出日期" value="{{{trackers.date}}}" cols="48" rows="2">
               </div>
             </div>

@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
+const d = new Date()
 
 const trackerSchema = new Schema({
   name: {
@@ -11,8 +12,11 @@ const trackerSchema = new Schema({
     required: true
   },
   date: {
-    type: Date,
-    default: Date.now(),
+    type: String,
+    default: () =>
+      d.getMonth() < 10
+        ? `${d.getFullYear()}/0${d.getMonth()}/${d.getDate()}`
+        : `${d.getFullYear()}/${d.getMonth()}/${d.getDate()}`,
     required: true
   },
   merchant: {

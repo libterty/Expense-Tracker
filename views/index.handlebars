@@ -5,14 +5,63 @@
       <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown">
         請選擇排序方式
       </button>
+      {{#if queryCategory}}
       <div class="dropdown-menu">
-        <a class="dropdown-item" value="" href="/" style="height: 32px;">             </a>
-        <a class="dropdown-item" value="home" href="/search?keyword=home">home</a>
-        <a class="dropdown-item" value="traffic" href="/search?keyword=traffic">traffic</a>
-        <a class="dropdown-item" value="foods" href="/search?keyword=foods">foods</a>
-        <a class="dropdown-item" value="entertainment" href="/search?keyword=entertainment">entertainment</a>
-        <a class="dropdown-item" value="others" href="/search?keyword=others">others</a>
+        <a class="dropdown-item" href="/?category={{queryCategory}}">全部</a>
+        <a class="dropdown-item" href='/?month=01&category={{queryCategory}}'>一月</a>
+        <a class="dropdown-item" href='/?month=02&category={{queryCategory}}'>二月</a>
+        <a class="dropdown-item" href='/?month=03&category={{queryCategory}}'>三月</a>
+        <a class="dropdown-item" href='/?month=04&category={{queryCategory}}'>四月</a>
+        <a class="dropdown-item" href='/?month=05&category={{queryCategory}}'>五月</a>
+        <a class="dropdown-item" href='/?month=06&category={{queryCategory}}'>六月</a>
+        <a class="dropdown-item" href='/?month=07&category={{queryCategory}}'>七月</a>
+        <a class="dropdown-item" href='/?month=08&category={{queryCategory}}'>八月</a>
+        <a class="dropdown-item" href='/?month=09&category={{queryCategory}}'>九月</a>
+        <a class="dropdown-item" href='/?month=10&category={{queryCategory}}'>十月</a>
+        <a class="dropdown-item" href='/?month=11&category={{queryCategory}}'>十一月</a>
+        <a class="dropdown-item" href='/?month=12&category={{queryCategory}}'>十二月</a>
       </div>
+      {{else}}
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="/">全部</a>
+        <a class="dropdown-item" href='/?month=01'>一月</a>
+        <a class="dropdown-item" href='/?month=02'>二月</a>
+        <a class="dropdown-item" href='/?month=03'>三月</a>
+        <a class="dropdown-item" href='/?month=04'>四月</a>
+        <a class="dropdown-item" href='/?month=05'>五月</a>
+        <a class="dropdown-item" href='/?month=06'>六月</a>
+        <a class="dropdown-item" href='/?month=07'>七月</a>
+        <a class="dropdown-item" href='/?month=08'>八月</a>
+        <a class="dropdown-item" href='/?month=09'>九月</a>
+        <a class="dropdown-item" href='/?month=10'>十月</a>
+        <a class="dropdown-item" href='/?month=11'>十一月</a>
+        <a class="dropdown-item" href='/?month=12'>十二月</a>
+      </div>
+      {{/if}}
+    </div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown">
+        請選擇排序方式
+      </button>
+      {{#if queryMonth}}
+      <div class="dropdown-menu">
+        <a class="dropdown-item" value="" href="/?month={{queryMonth}}" style="height: 32px;">全部</a>
+        <a class="dropdown-item" value="home" href='/?month={{queryMonth}}?category=home'>home</a>
+        <a class="dropdown-item" value="traffic" href='/?month={{queryMonth}}?category=traffic'>traffic</a>
+        <a class="dropdown-item" value="foods" href='/?month={{queryMonth}}?category=foods'>foods</a>
+        <a class="dropdown-item" value="entertainment" href='/?month={{queryMonth}}?category=entertainment'>entertainment</a>
+        <a class="dropdown-item" value="others" href='/?month={{queryMonth}}?category=others'>others</a>
+      </div>
+      {{else}}
+      <div class="dropdown-menu">
+        <a class="dropdown-item" value="" href="/" style="height: 32px;">全部</a>
+        <a class="dropdown-item" value="home" href='/?category=home'>home</a>
+        <a class="dropdown-item" value="traffic" href='/?category=traffic'>traffic</a>
+        <a class="dropdown-item" value="foods" href='/?category=foods'>foods</a>
+        <a class="dropdown-item" value="entertainment" href='/?category=entertainment'>entertainment</a>
+        <a class="dropdown-item" value="others" href='/?category=others'>others</a>
+      </div>
+      {{/if}}
     </div>
   </div>
 </div>
